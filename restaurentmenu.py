@@ -8,7 +8,7 @@ class Food(object):
         return self.price
     
     def __str__(self):
-        return self.name + ' : ' + self.getprice()
+        return self.name.center(20) + self.getprice()
   
 # Defining a function for building a Menu 
 # which generates list of Food    
@@ -65,7 +65,11 @@ def update_menu(names,costs):
     costs[item_type][ind]=new_p
 
 def search_menu(names,costs):
-    i
+    print("enter itemtype to search")
+    ser_itemty=input()
+    print("enter item")
+    it=input()
+    print(costs[ser_itemty][it])
 
 # items
 names = {"starters":["springrolls","french onion soup","salads","tomato soup"],"side dishes":["mixed green salad"
@@ -76,22 +80,24 @@ costs = {"starters":["Rs100","Rs150","Rs200","Rs120"],"side dishes":["Rs140","Rs
          "main dishes":["Rs300","Rs450","Rs200","Rs220"],"deserts":["Rs140","Rs130","Rs130","Rs150"]}
 
 flag='0'
-while(flag):
-    print("enter 1 for display\nenter 2 for add\nenter 3 for delete\nenter 4 for update")
+while(flag=='0'):
+    print("enter 1 for display\nenter 2 for add\nenter 3 for delete\nenter 4 for update\n enter 5 for search")
     num=input()
-    if(num=='1' or num =='2' or num =='3' or num =='4'):
+    if(num=='1' or num =='2' or num =='3' or num =='4' or num=='5'):
      pass
     else:
      print("enter proper digit")
-    num=input()
+     num=input()
     if(num=='1'):
      menu_display(names,costs)
     elif(num=='2'):
      add_menu(names,costs)
     elif(num=='3'):
      menuitem_delete(names,costs) 
-    else:
+    elif(num=='4'):
         update_menu(names,costs)
+    else:
+        search_menu(names,costs)
     print("want to continue enter 0 ")
     flag=input()
     
