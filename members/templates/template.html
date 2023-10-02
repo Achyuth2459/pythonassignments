@@ -1,0 +1,47 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<body>#}
+{##}
+{#{% for x in fruits %}#}
+{#  <h1>{{ x }}</h1>#}
+{#{% endfor %}#}
+{##}
+{#<p>In views.py you can see what the fruits variable looks like.</p>#}
+{##}
+{#{% with firstname ="tobias" %}#}
+{#    <h1>Hello {{ firstname }}, how are you?</h1>#}
+{#{% endwith %}#}
+{#{% if 1 %}#}
+{#  <h1>Hello</h1>#}
+{#{% else %}#}
+{#  <h1>Bye</h1>#}
+{#{% endif %}#}
+{##}
+{#{% filter upper %}#}
+{#<h1>Have a great day</h1>#}
+{#{% endfilter %}#}
+{##}
+{#{% if x is y %}#}
+{#checks two objects like lists#}
+{#  <h1>YES</h1>#}
+{#{% else %}#}
+{#  <h1>NO</h1>#}
+{#{% endif %}#}
+<table border="6">
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+    </tr>
+{% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+
+</body>
+</html>
